@@ -7,24 +7,23 @@ import './App.css'
 
 const AppGraph = rxf.graph({
   nodes: {
-    click: rxf.source('setter', 'click'),
+    click: rxf.source('set'),
     timer: rxf.source('timer', 1000),
 
     inc: rxf.reductions((a, _) => a + 1, () => 0),
 
-    out: rxf.sink('getter', 'count', 0),
+    count: rxf.sink('get', 0),
     log: rxf.sink('log')
   },
   links: [
-    [$.click, $.inc],
+    [$.click, $.inc, $.count],
     [$.timer, $.inc],
-    [$.inc, $.out],
     [$.inc, $.log]
   ]
 })
 
 function App() {
-  const { setters: { click }, getters: { count } } = startGraph(AppGraph)
+  const { set: { click }, get: { count } } = startGraph(AppGraph)
 
   return (
     <>
