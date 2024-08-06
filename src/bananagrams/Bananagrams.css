@@ -2,26 +2,43 @@
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
-  text-align: center;
+  text-align: left;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.solid:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.title {
+  display: flex;
+  justify-content: center;
+  margin: 2em;
 }
 
-.card {
+/* bananagrams game board style with a dark green background-color and rounded edges */
+.pile {
+  position: relative;
+  width: 800px;
+  height: 500px;
+  gap: 0.5em;
   padding: 2em;
+  background-color: #006400;
+  border-radius: 0.5em;
+  border: 0.2em solid black;
 }
 
-.read-the-docs {
-  color: #888;
+/* scrabble letter tile style with a yellow ivory background-color and rounded edges and all caps */
+/* also, a cool transition where the letters are brightly glowing red and fading to normal black */
+.tile {
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  text-shadow: rgba(0, 0, 0, 0.3) 0px -1px 0px;
+  padding-bottom: 3px;
+  width: 1.2em;
+  height: 1.2em;
+  border-radius: 0.2em;
+  font-size: 2em;
+  background-color: #f0e0d0;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  user-select: none;
 }
